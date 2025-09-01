@@ -212,83 +212,63 @@
   </text>
   
   <!-- Step 1 -->
-  <circle cx="80" cy="640" r="15" fill="#1976d2"/>
-  <text x="80" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">1</text>
-  <text x="110" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
+  <circle cx="150" cy="640" r="15" fill="#1976d2"/>
+  <text x="150" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">1</text>
+  <text x="180" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
     Cliente envia POST /api/posts
   </text>
-  <text x="110" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
+  <text x="180" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
     {title, body, author}
   </text>
   
   <!-- Step 2 -->
-  <circle cx="300" cy="640" r="15" fill="#388e3c"/>
-  <text x="300" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">2</text>
-  <text x="330" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
+  <circle cx="450" cy="640" r="15" fill="#388e3c"/>
+  <text x="450" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">2</text>
+  <text x="480" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
     PostService salva no H2
   </text>
-  <text x="330" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
+  <text x="480" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
     Gera UUID para o post
   </text>
   
   <!-- Step 3 -->
-  <circle cx="520" cy="640" r="15" fill="#ff8f00"/>
-  <text x="520" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">3</text>
-  <text x="550" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
+  <circle cx="750" cy="640" r="15" fill="#ff8f00"/>
+  <text x="750" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">3</text>
+  <text x="780" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
     Publica na fila de processamento
   </text>
-  <text x="550" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
+  <text x="780" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
     {postId, postBody} → Queue
   </text>
   
   <!-- Step 4 -->
-  <circle cx="80" cy="700" r="15" fill="#7b1fa2"/>
-  <text x="80" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">4</text>
-  <text x="110" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
+  <circle cx="150" cy="700" r="15" fill="#7b1fa2"/>
+  <text x="150" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">4</text>
+  <text x="180" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
     TextProcessor consome mensagem
   </text>
-  <text x="110" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
+  <text x="180" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
     Conta palavras e calcula valor
   </text>
   
   <!-- Step 5 -->
-  <circle cx="300" cy="700" r="15" fill="#ff8f00"/>
-  <text x="300" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">5</text>
-  <text x="330" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
+  <circle cx="450" cy="700" r="15" fill="#ff8f00"/>
+  <text x="450" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">5</text>
+  <text x="480" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
     Publica resultado na fila
   </text>
-  <text x="330" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
+  <text x="480" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
     {postId, wordCount, calculatedValue}
   </text>
   
   <!-- Step 6 -->
-  <circle cx="520" cy="700" r="15" fill="#388e3c"/>
-  <text x="520" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">6</text>
-  <text x="550" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
+  <circle cx="750" cy="700" r="15" fill="#388e3c"/>
+  <text x="750" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">6</text>
+  <text x="780" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
     PostService atualiza registro
   </text>
-  <text x="550" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
+  <text x="780" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
     Persiste wordCount e calculatedValue
-  </text>
-  
-  <!-- Technologies Used -->
-  <text x="780" y="640" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
-    Tecnologias:
-  </text>
-  <text x="780" y="660" font-family="Arial, sans-serif" font-size="12" fill="#666">
-    • Spring Boot 3.4.9
-  </text>
-  <text x="780" y="675" font-family="Arial, sans-serif" font-size="12" fill="#666">
-    • Spring AMQP
-  </text>
-  <text x="780" y="690" font-family="Arial, sans-serif" font-size="12" fill="#666">
-    • RabbitMQ
-  </text>
-  <text x="780" y="705" font-family="Arial, sans-serif" font-size="12" fill="#666">
-    • H2 Database
-  </text>
-  <text x="780" y="720" font-family="Arial, sans-serif" font-size="12" fill="#666">
-    • Java 21
   </text>
   
   <!-- Arrow marker definition -->
