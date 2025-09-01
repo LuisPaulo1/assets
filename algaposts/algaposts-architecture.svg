@@ -1,0 +1,300 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    AlgaPosts - Arquitetura de Microsserviços
+  </text>
+  
+  <!-- Client Section -->
+  <rect x="50" y="80" width="120" height="400" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="110" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976d2">
+    Client
+  </text>
+  
+  <!-- Client icon -->
+  <circle cx="110" cy="280" r="25" fill="#1976d2"/>
+  <text x="110" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">👤</text>
+  <text x="110" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1976d2">
+    REST API
+  </text>
+  
+  <!-- PostService -->
+  <rect x="220" y="120" width="180" height="320" fill="#c8e6c9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="310" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2e7d32">
+    PostService
+  </text>
+  <text x="310" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">
+    (Port: 8080)
+  </text>
+  
+  <!-- PostService Components -->
+  <rect x="235" y="180" width="150" height="40" fill="#fff" stroke="#388e3c" stroke-width="1" rx="3"/>
+  <text x="310" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">
+    📋 REST Controllers
+  </text>
+  <text x="310" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    POST/GET /api/posts
+  </text>
+  
+  <rect x="235" y="240" width="150" height="40" fill="#fff" stroke="#388e3c" stroke-width="1" rx="3"/>
+  <text x="310" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">
+    🔧 PostService
+  </text>
+  <text x="310" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Business Logic
+  </text>
+  
+  <rect x="235" y="300" width="150" height="40" fill="#fff" stroke="#388e3c" stroke-width="1" rx="3"/>
+  <text x="310" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">
+    📦 RabbitMQ Publisher
+  </text>
+  <text x="310" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Send Messages
+  </text>
+  
+  <rect x="235" y="360" width="150" height="40" fill="#fff" stroke="#388e3c" stroke-width="1" rx="3"/>
+  <text x="310" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32">
+    📨 Message Consumer
+  </text>
+  <text x="310" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Receive Results
+  </text>
+  
+  <!-- H2 Database -->
+  <rect x="235" y="460" width="150" height="60" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="5"/>
+  <text x="310" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100">
+    💾 H2 Database
+  </text>
+  <text x="310" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#bf360c">
+    Posts Storage
+  </text>
+  
+  <!-- RabbitMQ Central -->
+  <rect x="480" y="200" width="240" height="400" fill="#fff8e1" stroke="#ff8f00" stroke-width="3" rx="8"/>
+  <text x="600" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e65100">
+    🐰 RabbitMQ Broker
+  </text>
+  <text x="600" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#bf360c">
+    Message Queue System
+  </text>
+  
+  <!-- Exchange -->
+  <rect x="500" y="270" width="200" height="50" fill="#ffcc02" stroke="#ff8f00" stroke-width="2" rx="5"/>
+  <text x="600" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#bf360c">
+    📮 Exchange
+  </text>
+  <text x="600" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#bf360c">
+    post-processing-exchange.v1.e
+  </text>
+  
+  <!-- Queue 1 -->
+  <rect x="490" y="340" width="220" height="50" fill="#fff" stroke="#ff8f00" stroke-width="2" rx="5"/>
+  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#bf360c">
+    📥 Text Processor Queue
+  </text>
+  <text x="600" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#bf360c">
+    text-processor-service.post-processing.v1.q
+  </text>
+  
+  <!-- Queue 2 -->
+  <rect x="490" y="410" width="220" height="50" fill="#fff" stroke="#ff8f00" stroke-width="2" rx="5"/>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#bf360c">
+    📤 Post Result Queue
+  </text>
+  <text x="600" y="448" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#bf360c">
+    post-service.post-processing-result.v1.q
+  </text>
+  
+  <!-- DLQ -->
+  <rect x="490" y="480" width="220" height="50" fill="#ffcdd2" stroke="#d32f2f" stroke-width="2" rx="5"/>
+  <text x="600" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c62828">
+    ⚠️ Dead Letter Queue
+  </text>
+  <text x="600" y="518" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#c62828">
+    text-processor-service.post-processing.v1.dlq
+  </text>
+  
+  <!-- TextProcessorService -->
+  <rect x="780" y="120" width="180" height="320" fill="#e1bee7" stroke="#7b1fa2" stroke-width="2" rx="5"/>
+  <text x="870" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4a148c">
+    TextProcessorService
+  </text>
+  <text x="870" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a148c">
+    (Port: 8081)
+  </text>
+  
+  <!-- TextProcessor Components -->
+  <rect x="795" y="180" width="150" height="40" fill="#fff" stroke="#7b1fa2" stroke-width="1" rx="3"/>
+  <text x="870" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a148c">
+    📨 Message Consumer
+  </text>
+  <text x="870" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Process Messages
+  </text>
+  
+  <rect x="795" y="240" width="150" height="40" fill="#fff" stroke="#7b1fa2" stroke-width="1" rx="3"/>
+  <text x="870" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a148c">
+    🔢 Word Counter
+  </text>
+  <text x="870" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Count Words
+  </text>
+  
+  <rect x="795" y="300" width="150" height="40" fill="#fff" stroke="#7b1fa2" stroke-width="1" rx="3"/>
+  <text x="870" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a148c">
+    💰 Price Calculator
+  </text>
+  <text x="870" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    R$ 0.10 per word
+  </text>
+  
+  <rect x="795" y="360" width="150" height="40" fill="#fff" stroke="#7b1fa2" stroke-width="1" rx="3"/>
+  <text x="870" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4a148c">
+    📤 Result Publisher
+  </text>
+  <text x="870" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Send Results
+  </text>
+  
+  <!-- Flow Arrows and Labels -->
+  
+  <!-- Client to PostService -->
+  <line x1="170" y1="280" x2="220" y2="280" stroke="#1976d2" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="195" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976d2">
+    HTTP REST
+  </text>
+  
+  <!-- PostService to Database -->
+  <line x1="310" y1="440" x2="310" y2="460" stroke="#388e3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- PostService to RabbitMQ Queue 1 -->
+  <path d="M 400 320 Q 440 320 480 365" stroke="#ff6600" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="430" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ff6600">
+    post.created
+  </text>
+  
+  <!-- RabbitMQ Queue 1 to TextProcessor -->
+  <line x1="710" y1="365" x2="780" y2="280" stroke="#7b1fa2" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="740" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7b1fa2">
+    Consume
+  </text>
+  
+  <!-- TextProcessor to RabbitMQ Queue 2 -->
+  <line x1="780" y1="380" x2="710" y2="435" stroke="#7b1fa2" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="740" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7b1fa2">
+    post.resulted
+  </text>
+  
+  <!-- RabbitMQ Queue 2 to PostService -->
+  <path d="M 490 435 Q 450 435 400 380" stroke="#ff6600" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="430" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ff6600">
+    Results
+  </text>
+  
+  <!-- Exchange Bindings -->
+  <line x1="600" y1="320" x2="600" y2="340" stroke="#ffcc02" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="320" x2="600" y2="410" stroke="#ffcc02" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Routing Keys Labels -->
+  <text x="620" y="335" font-family="Arial, sans-serif" font-size="9" fill="#bf360c">
+    post.created
+  </text>
+  <text x="620" y="400" font-family="Arial, sans-serif" font-size="9" fill="#bf360c">
+    post.resulted
+  </text>
+  
+  <!-- Message Flow Legend -->
+  <rect x="50" y="580" width="1100" height="180" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="5"/>
+  <text x="600" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">
+    Fluxo de Mensagens
+  </text>
+  
+  <!-- Step 1 -->
+  <circle cx="80" cy="640" r="15" fill="#1976d2"/>
+  <text x="80" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">1</text>
+  <text x="110" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Cliente envia POST /api/posts
+  </text>
+  <text x="110" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    {title, body, author}
+  </text>
+  
+  <!-- Step 2 -->
+  <circle cx="300" cy="640" r="15" fill="#388e3c"/>
+  <text x="300" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">2</text>
+  <text x="330" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    PostService salva no H2
+  </text>
+  <text x="330" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Gera UUID para o post
+  </text>
+  
+  <!-- Step 3 -->
+  <circle cx="520" cy="640" r="15" fill="#ff8f00"/>
+  <text x="520" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">3</text>
+  <text x="550" y="635" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Publica na fila de processamento
+  </text>
+  <text x="550" y="650" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    {postId, postBody} → Queue
+  </text>
+  
+  <!-- Step 4 -->
+  <circle cx="80" cy="700" r="15" fill="#7b1fa2"/>
+  <text x="80" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">4</text>
+  <text x="110" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    TextProcessor consome mensagem
+  </text>
+  <text x="110" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Conta palavras e calcula valor
+  </text>
+  
+  <!-- Step 5 -->
+  <circle cx="300" cy="700" r="15" fill="#ff8f00"/>
+  <text x="300" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">5</text>
+  <text x="330" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Publica resultado na fila
+  </text>
+  <text x="330" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    {postId, wordCount, calculatedValue}
+  </text>
+  
+  <!-- Step 6 -->
+  <circle cx="520" cy="700" r="15" fill="#388e3c"/>
+  <text x="520" y="705" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">6</text>
+  <text x="550" y="695" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    PostService atualiza registro
+  </text>
+  <text x="550" y="710" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    Persiste wordCount e calculatedValue
+  </text>
+  
+  <!-- Technologies Used -->
+  <text x="780" y="640" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+    Tecnologias:
+  </text>
+  <text x="780" y="660" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    • Spring Boot 3.4.9
+  </text>
+  <text x="780" y="675" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    • Spring AMQP
+  </text>
+  <text x="780" y="690" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    • RabbitMQ
+  </text>
+  <text x="780" y="705" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    • H2 Database
+  </text>
+  <text x="780" y="720" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    • Java 21
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
